@@ -1,0 +1,27 @@
+<ion-menu ion-slot="start">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons> 
+</ion-menu>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Amigos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col styles="text-align: left">Nome</ion-col>
+        <ion-col styles="text-align: left">Idade</ion-col>
+        <ion-col styles="text-align: left">Nível de amizade</ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let amigo of amigos" class="ion-align-items-start">
+        <ion-col>{{amigo.nome}}</ion-col>
+        <ion-col>{{amigo.idade}}</ion-col>
+        <ion-col>{{amigo.nivelAmizade}}</ion-col>
+        <ion-col><ion-icon name="trash" (click)="openActionSheet(amigo.nome)"></ion-icon></ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
